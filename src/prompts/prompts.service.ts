@@ -85,4 +85,18 @@ export class PromptsService {
 
     return { text, sentiment: String(response.content).trim() };
   }
+
+  // 代码审查，输入代码和语言，输出审查结果
+  async codeReview(code: string,language:string) {
+    const prompt = ChatPromptTemplate.fromMessages([
+      ['system', '你是一个资深的{language}代码审查助手，帮助用户找出代码中的错误和改进建议'],
+      ['human', '请帮我审查一下的{language}代码，并指出其中的错误和改进建议：\n{code}'],
+    ]);
+    const chain = prompt.pipe(this.llm).pipe(new StringOutputParser());
+    const result = await chain.invoke({
+      code,
+      language,
+    });
+    return { language, code, review: result };
+  }
 }
