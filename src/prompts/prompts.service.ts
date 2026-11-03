@@ -58,7 +58,7 @@ export class PromptsService {
     };
   }
 
-  // 少量样本学习模版fewShotPromptTemplate，适合需要根据少量样本例进行分类的场景
+  // 少样本学习模版fewShotPromptTemplate，适合需要根据少量样本例进行分类的场景
   // 例如，情感分析、文本分类等
   async classify(text: string) {
     const examples = [

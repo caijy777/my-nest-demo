@@ -104,7 +104,7 @@ export class ChainsService {
     // 第二步根据分类结果，选择调用不同的模块
     const systemMap:Record<string,string> = {
       TECH:'你是一个技术支持助手，帮助用户解决技术问题',
-      REFUND:'你是一个退款助手助手，帮助用户解决退款问题',
+      REFUND:'你是一个退款助手，帮助用户解决退款问题',
       ORDER:'你是一个订单助手，帮助用户解决订单问题',
       COMPLAINT:'你是一个投诉处理助手，帮助用户解决投诉建议',
       OTHER:'你是一个通用助手，帮助用户解决其他问题'
