@@ -10,9 +10,11 @@ import { PromptsModule } from './prompts/prompts.module';
 import { ChainsModule } from './chains/chains.module';
 import { MemoryModule } from './memory/memory.module';
 import { RagModule } from './rag/rag.module';
+import { FunctionCallingModule } from './function-calling/function-calling.module';
+import { RagDbModule } from './rag-db/rag-db.module';
 
 @Module({
-  imports: [UserModule, PrismaModule, PostModule, ConfigModule.forRoot({isGlobal:true}), ModelsModule, PromptsModule, ChainsModule, MemoryModule, RagModule],
+  imports: [UserModule, PrismaModule, PostModule, ConfigModule.forRoot({isGlobal:true}), ModelsModule, PromptsModule, ChainsModule, MemoryModule, RagModule, FunctionCallingModule, RagDbModule],
   controllers: [AppController],
   providers: [AppService],
 })

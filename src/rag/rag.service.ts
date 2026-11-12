@@ -44,7 +44,7 @@ export class RagService {
                 '' //最后
             ],
         })
-        const allDocs: Document[] = [];// 所有文档的分块
+        const allDocs: Document[] = [];// 所有文档的分块（如按照上述embedding模型，按照chunkSize个字符分割的块）
         for(const doc of documents){
             // createDocuments(texts, metadatas)：将文本分割成分块，同时添加元数据
             const chunks = await splitter.createDocuments(
