@@ -94,10 +94,9 @@ import { UpdatePostDto } from './dto/update-post.dto'
       const exists = await this.prisma.post.findUnique({ where: { id } })
       if (!exists) {
         return { success: false, message: `文章 ID ${id} 不存在` }
-    }
-
-    await this.prisma.post.delete({ where: { id } })
-    return { success: true, message: `文章 ID ${id} 已删除` }
+      }
+      await this.prisma.post.delete({ where: { id } })
+      return { success: true, message: `文章 ID ${id} 已删除` }
   }
 
   // ─── 查询某用户的所有文章 ───────────────────────────────
